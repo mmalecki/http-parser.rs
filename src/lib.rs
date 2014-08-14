@@ -27,7 +27,7 @@ impl HttpParser {
     }
   }
 
-  pub fn execute(settings: c::Struct_http_parser_settings, data: &str) {
+  pub fn execute(settings: c::Struct_http_parser_settings, data: &[u8]) {
 
   }
 
