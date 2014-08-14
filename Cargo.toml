@@ -1,0 +1,12 @@
+[project]
+
+name = "http-parser.rs"
+version = "0.0.1"
+authors = ["Maciej Małecki <me@mmalecki.com>"]
+
+[[lib]]
+name = "http-parser"
+path = "src/http-parser/lib.rs"
+
+[[tests]]
+name = "tests"
