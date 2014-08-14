@@ -73,14 +73,14 @@ impl HttpParser {
     }
   }
 
-  pub fn execute(&mut self, settings: HttpParserSettings, data: &str) {
+  pub fn execute(&mut self, settings: HttpParserSettings, data: &[u8]) {
     let c_str = data.to_c_str();
     unsafe { c::http_parser_execute(&mut self.parser, &settings.to_native(),
                                     c_str.as_ptr(), data.len() as u64) };
   }
 
   pub fn should_keep_alive(&self) -> bool {
-    if (unsafe { c::http_should_keep_alive(&self.parser) } == 0) { return false }
+    if unsafe { c::http_should_keep_alive(&self.parser) } == 0 { return false }
     true
   }
 }
