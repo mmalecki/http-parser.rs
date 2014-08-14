@@ -4,3 +4,6 @@ version = "0.0.1"
 authors = ["Maciej Małecki <me@mmalecki.com>"]
 
 build = "make"
+
+[[lib]]
+name = "http_parser"

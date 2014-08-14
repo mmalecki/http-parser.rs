@@ -19,7 +19,7 @@ fn curl_get() {
   }
 
   let mut parser = make_an_http_parser();
-  let req = "GET / HTTP 1.1\r\nHost: localhost\r\n\r\n";
+  let req = "GET / HTTP 1.1\r\nHost: localhost\r\n\r\n".as_bytes();
 
   parser.execute(HttpParserSettings {
     on_message_begin: Some(http_cb),
